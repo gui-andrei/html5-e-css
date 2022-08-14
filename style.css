@@ -1,0 +1,90 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #222;
+}
+.inputbox
+{
+position: relative;
+width: 250px;
+}
+.inputbox input
+{
+    width: 100px;
+    background: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    padding: 10px 0 5px;
+}
+.inputbox  span
+{
+    position: absolute;
+    left: 0;
+    padding: 10px 0 5px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+}
+.inputbox input:valid ~span,
+.inputbox input:focus ~span
+{
+    color: #2196f3;
+    transform: translateY(-16px);
+    font-size: 0.65em;
+}
+
+.inputbox i 
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#ff1b69,#ff0,#2196f3,#9c27b0,#ff1b69);
+    animation: animate 2s linear infinite;
+    transition: 00.5s;
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position: 0;
+    }
+    100%
+    {
+        background-position: 250px;
+    }
+}
+.inputbox i #toggLeBtn
+{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    background:rgba(00, 00, 00,0.05) ;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
